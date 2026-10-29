@@ -49,7 +49,7 @@ export const VibeGallery: React.FC = () => {
           </div>
 
           {/* Filter Controls (Allowed functional button tabs) */}
-          <div className="flex flex-wrap items-center gap-1.5 p-1 bg-neutral-900 border border-neutral-800 rounded-lg shrink-0">
+          <div className="flex items-center gap-1.5 p-1 bg-neutral-900 border border-neutral-800 rounded-lg overflow-x-auto max-w-full shrink-0">
             {[
               { id: 'all', label: 'All Photos' },
               { id: 'features', label: 'Entrance & Features' },
@@ -60,7 +60,7 @@ export const VibeGallery: React.FC = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveFilter(tab.id as any)}
-                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all whitespace-nowrap ${
+                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all whitespace-nowrap shrink-0 ${
                   activeFilter === tab.id
                     ? 'bg-[#D4AF37] text-black font-semibold shadow-sm'
                     : 'text-neutral-400 hover:text-white'

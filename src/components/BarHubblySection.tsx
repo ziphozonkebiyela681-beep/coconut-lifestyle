@@ -115,18 +115,18 @@ export const BarHubblySection: React.FC<BarHubblySectionProps> = ({ onAddToCart 
         </div>
 
         {/* Tab Filters */}
-        <div className="flex justify-center mb-10">
-          <div className="flex items-center gap-2 p-1.5 bg-neutral-900 border border-neutral-800 rounded-xl">
+        <div className="flex justify-center mb-10 px-2">
+          <div className="flex items-center gap-1.5 p-1.5 bg-neutral-900 border border-neutral-800 rounded-xl overflow-x-auto max-w-full">
             {[
               { id: 'all', label: 'All Drinks & Hubblies' },
-              { id: 'bottles', label: 'VIP Bottles (Cognac & Tequila)' },
+              { id: 'bottles', label: 'VIP Bottles' },
               { id: 'hubbly', label: 'Hubbly Flavours' },
               { id: 'mixers', label: 'Mixers' },
             ].map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
-                className={`px-4 py-2 text-xs font-semibold rounded-lg transition-all ${
+                className={`px-3.5 py-2 text-xs font-semibold rounded-lg transition-all whitespace-nowrap shrink-0 ${
                   activeTab === tab.id
                     ? 'bg-gradient-to-r from-[#F59E0B] to-[#D4AF37] text-black shadow-md font-bold'
                     : 'text-neutral-400 hover:text-white hover:bg-neutral-800'

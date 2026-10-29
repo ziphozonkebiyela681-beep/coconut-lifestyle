@@ -24,20 +24,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, cartCount, onOpen
       {/* Pronounced Animated Rainbow Top Accent Ribbon */}
       <div className="h-1 w-full rainbow-gradient-bar shadow-sm" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-6 h-20">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-2 sm:gap-6 h-16 sm:h-20">
           {/* Zone 1: Authentic Gold Skyline Logo & Wordmark */}
-          <a href="#" className="flex items-center gap-3 shrink-0 group">
+          <a href="#" className="flex items-center gap-2 sm:gap-3 shrink-0 group">
             <img
               src={CLUB_INFO.logoUrl}
               alt="Coconut Lifestyle Gold Skyline Logo"
-              className="h-11 w-auto max-w-[130px] sm:max-w-[150px] object-contain drop-shadow-[0_0_12px_rgba(212,175,55,0.45)] transition-transform duration-200 group-hover:scale-105"
+              className="h-8 sm:h-11 w-auto max-w-[95px] sm:max-w-[150px] object-contain drop-shadow-[0_0_12px_rgba(212,175,55,0.45)] transition-transform duration-200 group-hover:scale-105"
             />
             <div className="flex flex-col">
-              <span className="font-display text-base tracking-[0.2em] font-bold text-white group-hover:text-[#D4AF37] transition-colors whitespace-nowrap">
+              <span className="font-display text-xs sm:text-base tracking-[0.15em] sm:tracking-[0.2em] font-bold text-white group-hover:text-[#D4AF37] transition-colors whitespace-nowrap">
                 COCONUT
               </span>
-              <span className="text-[10px] tracking-[0.35em] text-[#D4AF37] font-semibold -mt-1 uppercase whitespace-nowrap">
+              <span className="text-[8px] sm:text-[10px] tracking-[0.25em] sm:tracking-[0.35em] text-[#D4AF37] font-semibold -mt-0.5 sm:-mt-1 uppercase whitespace-nowrap">
                 Lifestyle
               </span>
             </div>
@@ -57,8 +57,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, cartCount, onOpen
           </nav>
 
           {/* Zone 3: Direct Booking & WhatsApp Actions */}
-          <div className="flex items-center gap-2.5 shrink-0">
-            {/* Quick WhatsApp Link in header */}
+          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+            {/* Quick WhatsApp Link in header (tablet and up) */}
             <a
               href={`https://wa.me/${CLUB_INFO.whatsapp}?text=Hi%20Coconut%20Lifestyle,%20I'd%20like%20to%20inquire%20about%20a%20table%20reservation.`}
               target="_blank"
@@ -70,7 +70,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, cartCount, onOpen
               <span>WhatsApp</span>
             </a>
 
-            {/* Quick Call Link */}
+            {/* Quick Call Link (desktop) */}
             <a
               href={`tel:${CLUB_INFO.phoneTel}`}
               className="hidden md:flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg bg-neutral-900 border border-[#D4AF37]/40 text-[#D4AF37] hover:bg-neutral-800 transition-colors whitespace-nowrap shrink-0"
@@ -83,7 +83,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, cartCount, onOpen
             {cartCount > 0 && (
               <button
                 onClick={onOpenCart}
-                className="relative px-3 py-2 text-xs font-semibold rounded-lg bg-neutral-900 border border-[#D4AF37]/50 text-[#D4AF37] hover:bg-neutral-800 transition-colors flex items-center gap-1.5 whitespace-nowrap shrink-0"
+                className="relative px-2.5 sm:px-3 py-1.5 sm:py-2 text-[11px] sm:text-xs font-semibold rounded-lg bg-neutral-900 border border-[#D4AF37]/50 text-[#D4AF37] hover:bg-neutral-800 transition-colors flex items-center gap-1 whitespace-nowrap shrink-0"
                 aria-label="View Order Tab"
               >
                 <span>Tab</span>
@@ -95,19 +95,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, cartCount, onOpen
 
             <button
               onClick={onOpenBooking}
-              className="px-4 sm:px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-black bg-gradient-to-r from-[#F59E0B] via-[#D4AF37] to-[#F59E0B] hover:brightness-110 active:scale-95 transition-all rounded-md shadow-md shadow-[#D4AF37]/25 whitespace-nowrap shrink-0 flex items-center gap-1.5"
+              className="px-2.5 sm:px-5 py-2 sm:py-2.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-black bg-gradient-to-r from-[#F59E0B] via-[#D4AF37] to-[#F59E0B] hover:brightness-110 active:scale-95 transition-all rounded-md shadow-md shadow-[#D4AF37]/25 whitespace-nowrap shrink-0 flex items-center gap-1"
             >
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Book VIP Table</span>
+              <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+              <span className="hidden xs:inline sm:inline">Book VIP</span>
+              <span className="xs:hidden">VIP</span>
             </button>
 
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-neutral-400 hover:text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+              className="lg:hidden p-2 text-neutral-300 hover:text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
             </button>
           </div>
         </div>

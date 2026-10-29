@@ -64,7 +64,7 @@ Please confirm table availability and booking at 12 Lower Ross Street, New Doorn
       onClick={onClose}
     >
       <div
-        className="relative bg-[#111111] border border-[#D4AF37]/50 rounded-2xl max-w-xl w-full p-6 sm:p-8 text-white my-8 shadow-2xl"
+        className="relative bg-[#111111] border border-[#D4AF37]/50 rounded-2xl max-w-xl w-full p-4 sm:p-8 text-white my-2 sm:my-8 shadow-2xl max-h-[94vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Pronounced Rainbow Top Accent Ribbon */}

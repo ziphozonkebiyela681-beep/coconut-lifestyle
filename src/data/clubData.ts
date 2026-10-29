@@ -28,10 +28,10 @@ export const CLUB_INFO = {
   logoUrl: '/assets/coconut_logo_isolated.png',
   entranceImageUrl: '/assets/aistudio/WhatsApp_Image_2026-10-29_at_5.52.28_PM_1aa4c2b0.jpeg',
   menuImages: {
-    grilledMeals: '/src/assets/images/menu_grilled_chicken_steak_1793289943825.jpg',
-    platters: '/src/assets/images/menu_braai_sharing_platter_1793289944012.jpg',
-    bottles: '/src/assets/images/menu_vip_bottle_service_1793289945541.jpg',
-    hubbly: '/src/assets/images/menu_amaren_hubbly_hookah_1793289944805.jpg',
+    grilledMeals: '/assets/menu/grilled_chicken_steak.jpg',
+    platters: '/assets/menu/braai_sharing_platter.jpg',
+    bottles: '/assets/menu/vip_bottle_service.jpg',
+    hubbly: '/assets/menu/amaren_hubbly_hookah.jpg',
   },
 };
 
