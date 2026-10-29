@@ -61,6 +61,7 @@ export const BarHubblySection: React.FC<BarHubblySectionProps> = ({ onAddToCart 
                 src={CLUB_INFO.menuImages.bottles}
                 alt="VIP Nightclub Bottle Service on Ice with Hennessy and Don Julio"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                referrerPolicy="no-referrer"
               />
               <div className="absolute top-4 left-4 bg-black/85 backdrop-blur-md px-3 py-1 rounded-md text-xs font-semibold text-[#D4AF37] border border-[#D4AF37]/30">
                 Bottle Service & Sparklers
@@ -92,6 +93,7 @@ export const BarHubblySection: React.FC<BarHubblySectionProps> = ({ onAddToCart 
                 src={CLUB_INFO.menuImages.hubbly}
                 alt="Amaren Hookah Hubbly Pipe with aromatic dense clouds"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                referrerPolicy="no-referrer"
               />
               <div className="absolute top-4 left-4 bg-black/85 backdrop-blur-md px-3 py-1 rounded-md text-xs font-semibold text-emerald-400 border border-emerald-500/30">
                 Amaren Hookah Lounge

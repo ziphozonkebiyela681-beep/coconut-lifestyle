@@ -107,11 +107,13 @@ export const KitchenSection: React.FC<KitchenSectionProps> = ({ onAddToCart }) =
             <div className="h-64 sm:h-72 overflow-hidden relative">
               <img
                 src={CLUB_INFO.menuImages.grilledMeals}
-                alt="Flame-Grilled Chicken Q Leg and Beef Steak Brisket with pap and chakalaka"
+                alt="Flame-Grilled Chicken Q Leg and Beef Steak Brisket served inside Coconut Lifestyle nightclub"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                referrerPolicy="no-referrer"
               />
-              <div className="absolute top-4 left-4 bg-black/85 backdrop-blur-md px-3 py-1 rounded-md text-xs font-semibold text-[#D4AF37] border border-[#D4AF37]/30">
-                Fresh Off The Fire
+              <div className="absolute top-4 left-4 bg-black/85 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-[#D4AF37] border border-[#D4AF37]/40 flex items-center gap-1.5 shadow-lg">
+                <Flame className="w-3.5 h-3.5 text-amber-500" />
+                <span>Served Fresh Under Club Lights</span>
               </div>
             </div>
             <div className="p-6 flex-1 flex flex-col justify-between">
@@ -120,7 +122,7 @@ export const KitchenSection: React.FC<KitchenSectionProps> = ({ onAddToCart }) =
                   Flame-Grilled Chicken & Beef Brisket
                 </h3>
                 <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed mb-4">
-                  Marinated in secret chef bastings and flame-seared for tender, smoky perfection. Served with your choice of traditional starch, 1 vegetable, and 2 home-style sides.
+                  Served hot to your table under the neon glow. Marinated in secret chef bastings and flame-seared for tender, smoky perfection. Served with traditional starch, fresh veg, and 2 home-style sides.
                 </p>
               </div>
               <div className="pt-3 border-t border-neutral-800 flex items-center justify-between text-xs text-neutral-400">
@@ -135,11 +137,13 @@ export const KitchenSection: React.FC<KitchenSectionProps> = ({ onAddToCart }) =
             <div className="h-64 sm:h-72 overflow-hidden relative">
               <img
                 src={CLUB_INFO.menuImages.platters}
-                alt="Braai Sharing Platter with boerewors, ribs, winglets and dombolo"
+                alt="Braai Sharing Platter with boerewors, ribs, winglets and dombolo on VIP nightclub booth table"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                referrerPolicy="no-referrer"
               />
-              <div className="absolute top-4 left-4 bg-black/85 backdrop-blur-md px-3 py-1 rounded-md text-xs font-semibold text-[#D4AF37] border border-[#D4AF37]/30">
-                Sharing Platters
+              <div className="absolute top-4 left-4 bg-black/85 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-[#D4AF37] border border-[#D4AF37]/40 flex items-center gap-1.5 shadow-lg">
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                <span>VIP Booth Sharing Feast</span>
               </div>
             </div>
             <div className="p-6 flex-1 flex flex-col justify-between">
