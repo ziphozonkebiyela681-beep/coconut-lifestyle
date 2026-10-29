@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  
+  h1, h2, h3, .font-display {
+    font-family: 'Cinzel', serif;
+  }
+}
+
+/* Custom luxury gold styling */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FDF4CD 0%, #D4AF37 50%, #AA820A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-bright {
+  background: linear-gradient(135deg, #FFF4D0 0%, #F59E0B 45%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-gold-subtle {
+  border-color: rgba(212, 175, 55, 0.25);
+}
+
+.border-gold-glow {
+  border-color: rgba(212, 175, 55, 0.55);
+  box-shadow: 0 0 20px -5px rgba(212, 175, 55, 0.25);
+}
+
+/* Pronounced, vibrant rainbow accent ribbon matching the club's pride & LED ambiance */
+.rainbow-gradient-bar {
+  background: linear-gradient(90deg, #FF1744 0%, #FF6D00 18%, #FFD600 36%, #00E676 54%, #00E5FF 72%, #7C4DFF 90%, #FF1744 100%);
+  background-size: 200% 100%;
+  animation: rainbow-pan 8s linear infinite;
+}
+
+@keyframes rainbow-pan {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.rainbow-glow {
+  box-shadow: 0 0 30px 2px rgba(255, 23, 68, 0.3), 
+              0 0 45px 6px rgba(0, 230, 118, 0.25), 
+              0 0 60px 10px rgba(0, 229, 255, 0.25);
+}
+
+.rainbow-glow-sm {
+  box-shadow: 0 0 16px -1px rgba(255, 109, 0, 0.4), 
+              0 0 20px 2px rgba(124, 77, 255, 0.35);
+}
+
+.rainbow-border-gradient {
+  border-image: linear-gradient(to right, #FF1744, #FF6D00, #FFD600, #00E676, #00E5FF, #7C4DFF) 1;
+}
+
+.rainbow-text-glow {
+  text-shadow: 0 0 12px rgba(255, 214, 0, 0.5), 0 0 24px rgba(0, 229, 255, 0.4);
+}
+
+/* Twinkling 4-point Sparkle Stars for the Isolated Logo */
+@keyframes twinkle-star {
+  0%, 100% {
+    transform: scale(0.1) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.25) rotate(90deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 8px #FFD700) drop-shadow(0 0 15px #FFF);
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle-star 2.8s ease-in-out infinite;
+}
+
+@keyframes gold-shimmer-sweep {
+  0%, 100% {
+    filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.75)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  }
+}
+
+.logo-sparkle-glow {
+  animation: gold-shimmer-sweep 4s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Coconut Lifestyle | Night Club & Lounge Johannesburg",
+  "description": "Premier nightlife destination in New Doornfontein, Johannesburg. Luxury VIP bottle service, authentic flame-grilled kitchen, and premium Amaren hubbly lounge.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
