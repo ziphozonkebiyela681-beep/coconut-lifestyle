@@ -55,7 +55,7 @@ export const VibeGallery: React.FC = () => {
               { id: 'features', label: 'Entrance & Features' },
               { id: 'lounge', label: 'Velvet Lounge' },
               { id: 'party', label: 'The Crowd' },
-              { id: 'bar', label: 'Mezzanine Bar' },
+              { id: 'bar', label: 'Bars & Mixology' },
             ].map((tab) => (
               <button
                 key={tab.id}

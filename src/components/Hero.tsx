@@ -133,8 +133,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreMenu }) => {
                 <Wine className="w-4 h-4 sm:w-5 sm:h-5 text-[#D4AF37]" />
               </div>
               <div>
-                <h4 className="text-xs sm:text-sm font-semibold text-white">Prestige Bottle Service</h4>
-                <p className="text-[11px] sm:text-xs text-neutral-400 mt-0.5">Hennessy, Don Julio, Rémy Martin & Cruz on ice</p>
+                <h4 className="text-xs sm:text-sm font-semibold text-white">Cocktail Bar & VIP Bottles</h4>
+                <p className="text-[11px] sm:text-xs text-neutral-400 mt-0.5">Craft mixology, Hennessy, Don Julio & beers on ice</p>
               </div>
             </div>
 

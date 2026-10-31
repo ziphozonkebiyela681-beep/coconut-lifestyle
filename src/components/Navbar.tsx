@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, Sparkles, MapPin, Phone, MessageCircle } from 'lucide-react';
 import { CLUB_INFO } from '../data/clubData';
+import { SmallTopStripPrideDancers } from './SmallTopStripPrideDancers';
 
 interface NavbarProps {
   onOpenBooking: () => void;
@@ -10,6 +11,7 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, cartCount, onOpenCart }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [partyKey, setPartyKey] = useState<number>(0);
 
   const navLinks = [
     { label: 'The Vibe', href: '#vibe' },
@@ -21,8 +23,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, cartCount, onOpen
 
   return (
     <header className="sticky top-0 z-40 bg-[#080808]/95 backdrop-blur-md border-b border-[#D4AF37]/25 shadow-lg shadow-black/80">
-      {/* Pronounced Animated Rainbow Top Accent Ribbon */}
-      <div className="h-1 w-full rainbow-gradient-bar shadow-sm" />
+      {/* Small Top Strip: 5 people dancing & partying under a disco ball with softly blended Pride stripes */}
+      <div
+        onClick={() => setPartyKey((p) => p + 1)}
+        className="cursor-pointer group"
+        title="Coconut Lifestyle Pride Party • Tap to replay"
+      >
+        <SmallTopStripPrideDancers key={partyKey} />
+        {/* Pronounced Animated Rainbow Top Accent Ribbon */}
+        <div className="h-1 w-full rainbow-gradient-bar shadow-sm transition-all group-hover:h-1.5" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-2 sm:gap-6 h-16 sm:h-20">

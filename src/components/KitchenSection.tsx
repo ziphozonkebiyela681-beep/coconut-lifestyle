@@ -9,6 +9,7 @@ import {
   CLUB_INFO,
 } from '../data/clubData';
 import { MenuItem } from '../types';
+import { KitchenIntroBanner } from './KitchenIntroBanner';
 
 interface KitchenSectionProps {
   onAddToCart: (
@@ -81,24 +82,8 @@ export const KitchenSection: React.FC<KitchenSectionProps> = ({ onAddToCart }) =
       )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-[#D4AF37] uppercase mb-3">
-            <ChefHat className="w-3.5 h-3.5" />
-            <span>Authentic Braai & Kitchen</span>
-          </div>
-          <h2 className="font-display text-3xl sm:text-5xl font-bold text-white text-balance">
-            Coconut Lifestyle <span className="text-gold-gradient">Kitchen & Grill</span>
-          </h2>
-          <p className="text-neutral-300 text-sm sm:text-base mt-3 leading-relaxed">
-            Good Food • Good Vibes • Great Memories. Kitchen opens at 10:00 AM daily for lunch, afternoon braai, and late-night party dining.
-          </p>
-
-          <div className="mt-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-900 border border-neutral-800 text-xs text-amber-400">
-            <Clock className="w-3.5 h-3.5" />
-            <span>Open Weekdays & Weekends from 10:00 AM</span>
-          </div>
-        </div>
+        {/* Grand Introduction: Official Isolated Kitchen Logo with CD Rainbow Reflection */}
+        <KitchenIntroBanner />
 
         {/* Feature Spotlight: Food Showcase Banners */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">

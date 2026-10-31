@@ -93,6 +93,162 @@
   animation: gold-shimmer-sweep 4s ease-in-out infinite;
 }
 
+/* Pride Party Dancers & Disco Ball Keyframes */
+@keyframes dance-bounce {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-8px) rotate(-3deg) scale(1.02);
+  }
+  50% {
+    transform: translateY(-2px) rotate(2deg) scale(0.98);
+  }
+  75% {
+    transform: translateY(-10px) rotate(-2deg) scale(1.03);
+  }
+}
+
+@keyframes dance-groove {
+  0%, 100% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+  33% {
+    transform: translateY(-6px) rotate(4deg) scale(1.02);
+  }
+  66% {
+    transform: translateY(-3px) rotate(-4deg) scale(0.98);
+  }
+}
+
+@keyframes dance-sway {
+  0%, 100% {
+    transform: translateY(0px) rotate(3deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(-3deg) scale(1.02);
+  }
+}
+
+@keyframes spin-disco {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-dance-bounce {
+  animation: dance-bounce 0.75s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-dance-groove {
+  animation: dance-groove 0.9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-dance-sway {
+  animation: dance-sway 0.85s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-spin-disco {
+  animation: spin-disco 3s ease-in-out infinite alternate;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 1.6s ease-in-out infinite;
+}
+
+/* Soft Growing & Elegance Animations for Small Top Strip Pride Crew */
+@keyframes soft-pride-grow {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+    filter: blur(4px);
+  }
+  60% {
+    transform: scale(1.08);
+    opacity: 0.95;
+    filter: blur(0px) drop-shadow(0 0 8px rgba(255, 30, 86, 0.5));
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0px) drop-shadow(0 0 5px rgba(0, 163, 255, 0.4));
+  }
+}
+
+@keyframes elegant-sway-1 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-2.5px) rotate(3deg);
+  }
+}
+
+@keyframes elegant-sway-2 {
+  0%, 100% {
+    transform: translateY(-0.5px) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-3px) rotate(2deg);
+  }
+}
+
+@keyframes elegant-sway-3 {
+  0%, 100% {
+    transform: translateY(0px) rotate(2.5deg);
+  }
+  50% {
+    transform: translateY(-2.5px) rotate(-2.5deg);
+  }
+}
+
+@keyframes disco-soft-pulse {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+    filter: drop-shadow(0 0 4px rgba(255, 208, 0, 0.6));
+  }
+  50% {
+    transform: rotate(12deg) scale(1.08);
+    filter: drop-shadow(0 0 9px rgba(255, 255, 255, 0.9));
+  }
+}
+
+.animate-soft-grow {
+  animation: soft-pride-grow 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-elegant-sway-1 {
+  animation: elegant-sway-1 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-elegant-sway-2 {
+  animation: elegant-sway-2 1.15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-elegant-sway-3 {
+  animation: elegant-sway-3 0.95s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-disco-soft-pulse {
+  animation: disco-soft-pulse 2s ease-in-out infinite alternate;
+}
+
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

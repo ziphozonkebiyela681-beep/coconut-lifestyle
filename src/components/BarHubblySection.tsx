@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Wine, Sparkles, Plus, ShieldCheck, Info } from 'lucide-react';
+import { Wine, Sparkles, Plus, ShieldCheck, Info, GlassWater } from 'lucide-react';
 import {
   BOTTLE_ITEMS,
+  COCKTAIL_ITEMS,
   MIXER_ITEMS,
   HUBBLY_ITEMS,
   CLUB_INFO,
@@ -13,7 +14,7 @@ interface BarHubblySectionProps {
 }
 
 export const BarHubblySection: React.FC<BarHubblySectionProps> = ({ onAddToCart }) => {
-  const [activeTab, setActiveTab] = useState<'all' | 'bottles' | 'hubbly' | 'mixers'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'cocktails' | 'bottles' | 'hubbly' | 'mixers'>('all');
   const [addedToast, setAddedToast] = useState<string | null>(null);
 
   const handleQuickAdd = (item: MenuItem) => {
@@ -45,31 +46,62 @@ export const BarHubblySection: React.FC<BarHubblySectionProps> = ({ onAddToCart 
             <span>Nightclub Bar & Shisha Lounge</span>
           </div>
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-white text-balance">
-            VIP Bottles & <span className="text-gold-gradient">Amaren Hubbly</span>
+            VIP Bottles, Cocktails & <span className="text-gold-gradient">Amaren Hubbly</span>
           </h2>
           <p className="text-neutral-300 text-sm sm:text-base mt-3 leading-relaxed">
-            Where Nights Come Alive • Love • Unity • Freedom. Premium cognacs, 100% blue agave Jalisco tequila, chilled mixers, and smooth icy Amaren hookah sessions.
+            Where Nights Come Alive • Love • Unity • Freedom. Skilled mixology at our timber bar counter, premium cognacs, 100% blue agave tequila, chilled mixers, and smooth icy Amaren hookah sessions.
           </p>
         </div>
 
-        {/* Visual Spotlight Banners */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          {/* Card 1: VIP Bottle Service */}
-          <div className="rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-950 flex flex-col group shadow-xl">
-            <div className="h-64 sm:h-72 overflow-hidden relative">
+        {/* Visual Spotlight Banners (3 Pillars of the Lounge) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
+          {/* Card 1: Authentic Main Cocktail Bar */}
+          <div className="rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-950 flex flex-col group shadow-xl hover:border-[#D4AF37]/50 transition-all duration-300">
+            <div className="h-60 sm:h-64 overflow-hidden relative">
+              <img
+                src={CLUB_INFO.barImageUrl}
+                alt="Coconut Lifestyle Main Cocktail Bar with bartender pouring craft drinks for patrons"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute top-4 left-4 bg-black/85 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-[#D4AF37] border border-[#D4AF37]/40 flex items-center gap-1.5 shadow-lg">
+                <GlassWater className="w-3.5 h-3.5 text-[#D4AF37]" />
+                <span>The Cocktail Bar</span>
+              </div>
+            </div>
+            <div className="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 className="font-display text-lg sm:text-xl font-bold text-white mb-2">
+                  Main Bar & Craft Mixology
+                </h3>
+                <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed mb-4">
+                  Pull up a stool at our illuminated bar counter. Expert mixologists shaking fresh cocktails, pouring cold draughts, and serving chilled shooters under artisan pinecone wooden pendants and electric blue neon.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-neutral-800 flex items-center justify-between text-xs text-neutral-400">
+                <span className="text-amber-400 font-semibold">Cocktails from R85 • Beers from R38</span>
+                <span className="text-neutral-400">Bar Open from 10:00 AM</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2: VIP Bottle Service */}
+          <div className="rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-950 flex flex-col group shadow-xl hover:border-[#D4AF37]/50 transition-all duration-300">
+            <div className="h-60 sm:h-64 overflow-hidden relative">
               <img
                 src={CLUB_INFO.menuImages.bottles}
                 alt="VIP Nightclub Bottle Service on Ice with Hennessy and Don Julio"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute top-4 left-4 bg-black/85 backdrop-blur-md px-3 py-1 rounded-md text-xs font-semibold text-[#D4AF37] border border-[#D4AF37]/30">
-                Bottle Service & Sparklers
+              <div className="absolute top-4 left-4 bg-black/85 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-[#D4AF37] border border-[#D4AF37]/40 flex items-center gap-1.5 shadow-lg">
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                <span>Bottle Service & Sparklers</span>
               </div>
             </div>
             <div className="p-6 flex-1 flex flex-col justify-between">
               <div>
-                <h3 className="font-display text-xl font-bold text-white mb-2">
+                <h3 className="font-display text-lg sm:text-xl font-bold text-white mb-2">
                   Top-Shelf Spirits & Cognacs
                 </h3>
                 <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed mb-4">
@@ -80,29 +112,30 @@ export const BarHubblySection: React.FC<BarHubblySectionProps> = ({ onAddToCart 
                 <span className="text-[#D4AF37] font-semibold">Bottles from R650 to R1,750</span>
                 <span className="flex items-center gap-1 text-neutral-300">
                   <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37]" />
-                  100% Authentic Sealed Bottles
+                  100% Sealed Bottles
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Card 2: Amaren Hubbly Lounge */}
-          <div className="rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-950 flex flex-col group shadow-xl">
-            <div className="h-64 sm:h-72 overflow-hidden relative">
+          {/* Card 3: Amaren Hubbly Lounge */}
+          <div className="rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-950 flex flex-col group shadow-xl hover:border-emerald-500/50 transition-all duration-300">
+            <div className="h-60 sm:h-64 overflow-hidden relative">
               <img
                 src={CLUB_INFO.menuImages.hubbly}
                 alt="Amaren Hookah Hubbly Pipe with aromatic dense clouds"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute top-4 left-4 bg-black/85 backdrop-blur-md px-3 py-1 rounded-md text-xs font-semibold text-emerald-400 border border-emerald-500/30">
-                Amaren Hookah Lounge
+              <div className="absolute top-4 left-4 bg-black/85 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-emerald-400 border border-emerald-500/40 flex items-center gap-1.5 shadow-lg">
+                <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Amaren Hookah Lounge</span>
               </div>
             </div>
             <div className="p-6 flex-1 flex flex-col justify-between">
               <div>
-                <h3 className="font-display text-xl font-bold text-white mb-2">
-                  Signature Amaren Hubbly Flavours
+                <h3 className="font-display text-lg sm:text-xl font-bold text-white mb-2">
+                  Signature Amaren Hubbly
                 </h3>
                 <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed mb-4">
                   Thick, chilled aromatic clouds from genuine Amaren blends. Complete modern designer pipe setup with fresh coal changes provided throughout your night.
@@ -121,6 +154,7 @@ export const BarHubblySection: React.FC<BarHubblySectionProps> = ({ onAddToCart 
           <div className="flex items-center gap-1.5 p-1.5 bg-neutral-900 border border-neutral-800 rounded-xl overflow-x-auto max-w-full">
             {[
               { id: 'all', label: 'All Drinks & Hubblies' },
+              { id: 'cocktails', label: 'Craft Cocktails & Beers' },
               { id: 'bottles', label: 'VIP Bottles' },
               { id: 'hubbly', label: 'Hubbly Flavours' },
               { id: 'mixers', label: 'Mixers' },
@@ -139,6 +173,57 @@ export const BarHubblySection: React.FC<BarHubblySectionProps> = ({ onAddToCart 
             ))}
           </div>
         </div>
+
+        {/* SECTION 0: COCKTAILS & CRAFT BAR DRINKS */}
+        {(activeTab === 'all' || activeTab === 'cocktails') && (
+          <div className="mb-16">
+            <div className="pb-3 mb-6 border-b border-neutral-800 flex flex-wrap items-center justify-between gap-2">
+              <div>
+                <h3 className="font-display text-xl font-bold text-white tracking-wide flex items-center gap-2">
+                  <GlassWater className="w-5 h-5 text-[#D4AF37]" />
+                  <span>Main Bar Cocktails & Cold Beers</span>
+                </h3>
+                <p className="text-xs text-neutral-400 mt-0.5">
+                  Handcrafted live by our bartenders under the pinecone lamps
+                </p>
+              </div>
+              <span className="text-xs text-[#D4AF37] font-medium">Crafted Fresh to Order</span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {COCKTAIL_ITEMS.map((cocktail) => (
+                <div
+                  key={cocktail.id}
+                  className="flex flex-col justify-between bg-neutral-900/80 border border-neutral-800 rounded-xl p-6 hover:border-[#D4AF37]/60 transition-all duration-300 group"
+                >
+                  <div>
+                    <div className="flex items-start justify-between gap-4 mb-2">
+                      <h4 className="font-display text-base sm:text-lg font-bold text-white group-hover:text-[#D4AF37] transition-colors">
+                        {cocktail.name}
+                      </h4>
+                      <span className="font-mono text-lg font-bold text-[#D4AF37] whitespace-nowrap tabular-nums">
+                        R{cocktail.price}
+                      </span>
+                    </div>
+
+                    <p className="text-xs text-amber-400 font-medium mb-3">{cocktail.subtitle}</p>
+                    <p className="text-xs text-neutral-300 leading-relaxed mb-6">
+                      {cocktail.description}
+                    </p>
+                  </div>
+
+                  <button
+                    onClick={() => handleQuickAdd(cocktail)}
+                    className="w-full py-2.5 px-4 text-xs font-semibold text-neutral-200 bg-neutral-800 hover:bg-[#D4AF37] hover:text-black transition-colors rounded-lg flex items-center justify-center gap-1.5"
+                  >
+                    <Plus className="w-4 h-4" />
+                    <span>Add to Tab (R{cocktail.price})</span>
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* SECTION 1: BOTTLES */}
         {(activeTab === 'all' || activeTab === 'bottles') && (

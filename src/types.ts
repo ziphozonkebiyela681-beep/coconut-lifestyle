@@ -1,4 +1,4 @@
-export type MenuCategory = 'meals' | 'platters' | 'bottles' | 'mixers' | 'hubbly';
+export type MenuCategory = 'meals' | 'platters' | 'bottles' | 'mixers' | 'hubbly' | 'cocktails';
 
 export interface MenuItem {
   id: string;

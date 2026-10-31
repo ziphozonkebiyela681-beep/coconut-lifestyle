@@ -26,7 +26,9 @@ export const CLUB_INFO = {
   dressCode: 'Smart Casual / Dress to Impress (No slippers, no track pants after 20:00)',
   agePolicy: 'Strictly 18+ (Valid ID / Drivers License required at door)',
   logoUrl: '/assets/coconut_logo_isolated.png',
+  kitchenLogoUrl: '/assets/coconut_kitchen_logo_gemstones.png',
   entranceImageUrl: '/assets/aistudio/WhatsApp_Image_2026-10-29_at_5.52.28_PM_1aa4c2b0.jpeg',
+  barImageUrl: '/assets/bar/coconut_lifestyle_bar.jpg',
   menuImages: {
     grilledMeals: '/assets/menu/grilled_chicken_steak.jpg',
     platters: '/assets/menu/braai_sharing_platter.jpg',
@@ -331,7 +333,58 @@ export const HUBBLY_ITEMS: MenuItem[] = [
   },
 ];
 
+export const COCKTAIL_ITEMS: MenuItem[] = [
+  {
+    id: 'cocktail-coconut-paradise',
+    name: 'Coconut Paradise Shaken Cocktail',
+    category: 'cocktails',
+    price: 85,
+    subtitle: 'Signature House Cocktail • Handcrafted at the Bar',
+    description: 'Freshly shaken with coconut nectar, white spirits, pineapple juice, and fresh lime wedge over crushed ice.',
+    badge: 'Signature',
+  },
+  {
+    id: 'cocktail-joburg-sour',
+    name: 'Hennessy Citrus Sour',
+    category: 'cocktails',
+    price: 95,
+    subtitle: 'Cognac Craft Mixology',
+    description: 'Hennessy VS shaken with freshly squeezed lemon juice, simple syrup, and aromatic bitters served cold.',
+  },
+  {
+    id: 'cocktail-tequila-sunrise',
+    name: 'Jalisco Blue Agave Margarita',
+    category: 'cocktails',
+    price: 85,
+    subtitle: 'Tequila • Fresh Lime & Salt Rim',
+    description: 'Don Julio Blanco shaken with fresh lime juice, triple sec, and served on the rocks with coarse sea salt.',
+  },
+  {
+    id: 'cocktail-heineken-draught',
+    name: 'Heineken Ice-Cold Draught / Bottle',
+    category: 'cocktails',
+    price: 38,
+    subtitle: 'Chilled from our Illuminated Heineken Bar Fridge',
+    description: 'Crisp, perfectly chilled premium lager poured straight from our bar station.',
+  },
+  {
+    id: 'cocktail-corona-lime',
+    name: 'Corona Extra with Fresh Lime',
+    category: 'cocktails',
+    price: 45,
+    subtitle: 'Served with Fresh Lime Wedge',
+    description: 'Ice-cold imported Mexican beer garnished with a freshly cut lime slice.',
+  },
+];
+
 export const GALLERY_PHOTOS: GalleryPhoto[] = [
+  {
+    id: 'main-cocktail-bar',
+    src: '/assets/bar/coconut_lifestyle_bar.jpg',
+    title: 'The Cocktail Bar & Mixology Lounge',
+    subtitle: 'Expert bartenders shaking craft cocktails, ice-cold draughts, and good times under artisan pinecone wooden pendant lamps and blue neon lights',
+    tag: 'bar',
+  },
   {
     id: 'street-entrance',
     src: '/assets/aistudio/WhatsApp_Image_2026-10-29_at_5.52.28_PM_1aa4c2b0.jpeg',
