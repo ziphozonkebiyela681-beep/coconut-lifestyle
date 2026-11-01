@@ -95,6 +95,9 @@ export const KitchenSection: React.FC<KitchenSectionProps> = ({ onAddToCart }) =
                 alt="Flame-Grilled Chicken Q Leg and Beef Steak Brisket served inside Coconut Lifestyle nightclub"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = '/assets/menu/club_grilled_food_1793297803463.jpg';
+                }}
               />
               <div className="absolute top-4 left-4 bg-black/85 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-[#D4AF37] border border-[#D4AF37]/40 flex items-center gap-1.5 shadow-lg">
                 <Flame className="w-3.5 h-3.5 text-amber-500" />
@@ -125,6 +128,9 @@ export const KitchenSection: React.FC<KitchenSectionProps> = ({ onAddToCart }) =
                 alt="Braai Sharing Platter with boerewors, ribs, winglets and dombolo on VIP nightclub booth table"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = '/assets/menu/club_braai_platter_1793297804070.jpg';
+                }}
               />
               <div className="absolute top-4 left-4 bg-black/85 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-[#D4AF37] border border-[#D4AF37]/40 flex items-center gap-1.5 shadow-lg">
                 <Sparkles className="w-3.5 h-3.5 text-amber-400" />

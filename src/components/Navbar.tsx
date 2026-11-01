@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { Menu, X, Sparkles, MapPin, Phone, MessageCircle } from 'lucide-react';
 import { CLUB_INFO } from '../data/clubData';
 import { SmallTopStripPrideDancers } from './SmallTopStripPrideDancers';
@@ -14,11 +15,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, cartCount, onOpen
   const [partyKey, setPartyKey] = useState<number>(0);
 
   const navLinks = [
-    { label: 'The Vibe', href: '#vibe' },
-    { label: 'Kitchen & Braai', href: '#kitchen-menu' },
-    { label: 'Bottles & Hubbly', href: '#bar-hubbly' },
-    { label: 'VIP Booths', href: '#vip-booths' },
-    { label: 'Location & Hours', href: '#location' },
+    { label: 'Home', path: '/' },
+    { label: 'The Vibe', path: '/vibe' },
+    { label: 'Kitchen & Braai', path: '/kitchen' },
+    { label: 'Bottles & Hubbly', path: '/drinks' },
+    { label: 'VIP Booths', path: '/vip' },
+    { label: 'Location & Hours', path: '/location' },
   ];
 
   return (
@@ -37,7 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, cartCount, onOpen
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-2 sm:gap-6 h-16 sm:h-20">
           {/* Zone 1: Authentic Gold Skyline Logo & Wordmark */}
-          <a href="#" className="flex items-center gap-2 sm:gap-3 shrink-0 group">
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 shrink-0 group">
             <img
               src={CLUB_INFO.logoUrl}
               alt="Coconut Lifestyle Gold Skyline Logo"
@@ -51,18 +53,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, cartCount, onOpen
                 Lifestyle
               </span>
             </div>
-          </a>
+          </Link>
 
-          {/* Zone 2: 4-5 Clean Nav Links */}
-          <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-neutral-300">
+          {/* Zone 2: Multi-Page Nav Links */}
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-medium">
             {navLinks.map((link) => (
-              <a
+              <NavLink
                 key={link.label}
-                href={link.href}
-                className="whitespace-nowrap shrink-0 hover:text-[#D4AF37] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#D4AF37] after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
+                to={link.path}
+                className={({ isActive }) =>
+                  `whitespace-nowrap shrink-0 transition-colors relative py-1.5 text-xs xl:text-sm font-semibold tracking-wide ${
+                    isActive
+                      ? 'text-[#D4AF37] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#D4AF37] after:shadow-[0_0_8px_#D4AF37]'
+                      : 'text-neutral-300 hover:text-[#D4AF37] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#D4AF37] after:scale-x-0 hover:after:scale-x-100 after:transition-transform'
+                  }`
+                }
               >
                 {link.label}
-              </a>
+              </NavLink>
             ))}
           </nav>
 
@@ -132,16 +140,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, cartCount, onOpen
             <span className="truncate">12 Lower Ross St, New Doornfontein</span>
           </div>
 
-          <div className="flex flex-col space-y-2 pt-1">
+          <div className="flex flex-col space-y-1.5 pt-1">
             {navLinks.map((link) => (
-              <a
+              <NavLink
                 key={link.label}
-                href={link.href}
+                to={link.path}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 text-sm font-medium text-neutral-200 hover:text-[#D4AF37] hover:bg-neutral-900 rounded-md transition-colors"
+                className={({ isActive }) =>
+                  `px-3 py-2.5 text-sm font-semibold rounded-md transition-colors flex items-center justify-between ${
+                    isActive
+                      ? 'text-[#D4AF37] bg-neutral-900 border-l-2 border-[#D4AF37]'
+                      : 'text-neutral-200 hover:text-[#D4AF37] hover:bg-neutral-900'
+                  }`
+                }
               >
-                {link.label}
-              </a>
+                <span>{link.label}</span>
+              </NavLink>
             ))}
           </div>
 

@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { ScrollToTop } from './components/ScrollToTop';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { VibeGallery } from './components/VibeGallery';
-import { KitchenSection } from './components/KitchenSection';
-import { BarHubblySection } from './components/BarHubblySection';
-import { VipSection } from './components/VipSection';
-import { LocationHours } from './components/LocationHours';
 import { Footer } from './components/Footer';
 import { VipBookingModal } from './components/VipBookingModal';
 import { CartDrawer } from './components/CartDrawer';
 import { MenuItem, OrderItem, VipBooth } from './types';
+
+// Multi-Page Views
+import { HomePage } from './pages/HomePage';
+import { VibePage } from './pages/VibePage';
+import { KitchenPage } from './pages/KitchenPage';
+import { DrinksPage } from './pages/DrinksPage';
+import { VipPage } from './pages/VipPage';
+import { LocationPage } from './pages/LocationPage';
 
 export default function App() {
   const [cartItems, setCartItems] = useState<OrderItem[]>([]);
@@ -25,7 +29,7 @@ export default function App() {
     setCartItems((prevItems) => {
       // Create a unique key for custom food combinations
       const customKey = `${item.id}-${customization?.basting || ''}-${customization?.starch || ''}-${(customization?.sides || []).join('-')}`;
-      
+
       const existingIndex = prevItems.findIndex((order) => order.id === customKey);
       if (existingIndex > -1) {
         const updated = [...prevItems];
@@ -79,66 +83,65 @@ export default function App() {
   );
 
   return (
-    <div className="min-h-screen bg-[#080808] text-white flex flex-col selection:bg-[#D4AF37] selection:text-black">
-      {/* 3-Zone Top Bar Navigation */}
-      <Navbar
-        onOpenBooking={() => setIsBookingOpen(true)}
-        cartCount={totalCartCount}
-        onOpenCart={() => setIsCartOpen(true)}
-      />
-
-      {/* Main Page Flow */}
-      <main className="flex-1">
-        {/* Hero Section */}
-        <Hero
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="min-h-screen bg-[#080808] text-white flex flex-col selection:bg-[#D4AF37] selection:text-black">
+        {/* Sticky Top Navigation with Small Top Strip Pride Dancers */}
+        <Navbar
           onOpenBooking={() => setIsBookingOpen(true)}
-          onExploreMenu={() => {
-            document.getElementById('kitchen-menu')?.scrollIntoView({ behavior: 'smooth' });
-          }}
+          cartCount={totalCartCount}
+          onOpenCart={() => setIsCartOpen(true)}
         />
 
-        {/* The Vibe & Inside Club Photo Gallery (Includes Street Entrance) */}
-        <VibeGallery />
+        {/* Multi-Page Route Outlet */}
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<HomePage onOpenBooking={() => setIsBookingOpen(true)} />} />
+            <Route path="/vibe" element={<VibePage onOpenBooking={() => setIsBookingOpen(true)} />} />
+            <Route path="/kitchen" element={<KitchenPage onAddToCart={handleAddToCart} />} />
+            <Route path="/drinks" element={<DrinksPage onAddToCart={(item) => handleAddToCart(item)} />} />
+            <Route
+              path="/vip"
+              element={
+                <VipPage
+                  onSelectBooth={handleOpenBookingWithBooth}
+                  onOpenBooking={() => setIsBookingOpen(true)}
+                />
+              }
+            />
+            <Route path="/location" element={<LocationPage />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </main>
 
-        {/* Dedicated Section 1: Flame-Grilled Kitchen, Platters & Sides */}
-        <KitchenSection onAddToCart={handleAddToCart} />
+        {/* Universal Footer */}
+        <Footer />
 
-        {/* Dedicated Section 2: Nightclub Bar, Bottles, Mixers & Amaren Hubbly Lounge */}
-        <BarHubblySection onAddToCart={(item) => handleAddToCart(item)} />
+        {/* Universal VIP Booking Modal */}
+        {isBookingOpen && (
+          <VipBookingModal
+            initialBooth={selectedBooth}
+            onClose={() => {
+              setIsBookingOpen(false);
+              setSelectedBooth(null);
+            }}
+            cartTotal={totalCartValue}
+          />
+        )}
 
-        {/* VIP Booths & Table Reservations Linked to Calling & WhatsApp */}
-        <VipSection onSelectBooth={handleOpenBookingWithBooth} />
-
-        {/* Location, Hours & Street Outside View */}
-        <LocationHours />
-      </main>
-
-      {/* Footer with Social Links & Hours */}
-      <Footer />
-
-      {/* Interactive Modals */}
-      {isBookingOpen && (
-        <VipBookingModal
-          initialBooth={selectedBooth}
-          onClose={() => {
-            setIsBookingOpen(false);
-            setSelectedBooth(null);
+        {/* Universal Party Tab / Cart Drawer */}
+        <CartDrawer
+          isOpen={isCartOpen}
+          onClose={() => setIsCartOpen(false)}
+          items={cartItems}
+          onUpdateQuantity={handleUpdateQuantity}
+          onRemoveItem={handleRemoveItem}
+          onClearCart={handleClearCart}
+          onProceedToBooking={() => {
+            setIsBookingOpen(true);
           }}
-          cartTotal={totalCartValue}
         />
-      )}
-
-      <CartDrawer
-        isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
-        items={cartItems}
-        onUpdateQuantity={handleUpdateQuantity}
-        onRemoveItem={handleRemoveItem}
-        onClearCart={handleClearCart}
-        onProceedToBooking={() => {
-          setIsBookingOpen(true);
-        }}
-      />
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }

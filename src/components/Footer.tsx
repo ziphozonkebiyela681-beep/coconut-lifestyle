@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { CLUB_INFO } from '../data/clubData';
 import { MapPin, Phone, Instagram } from 'lucide-react';
 
@@ -12,21 +13,21 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Col 1: Brand & Logo */}
           <div className="space-y-4 md:col-span-1">
-            <div className="flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-3 group">
               <img
                 src={CLUB_INFO.logoUrl}
                 alt="Coconut Lifestyle Gold Skyline Logo"
-                className="h-12 w-auto max-w-[140px] object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.4)]"
+                className="h-12 w-auto max-w-[140px] object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.4)] group-hover:scale-105 transition-transform"
               />
               <div>
-                <span className="font-display text-base font-bold text-white tracking-[0.2em] block">
+                <span className="font-display text-base font-bold text-white tracking-[0.2em] block group-hover:text-[#D4AF37] transition-colors">
                   COCONUT
                 </span>
                 <span className="text-[10px] tracking-[0.3em] text-[#D4AF37] font-semibold -mt-1 block">
                   — LIFESTYLE —
                 </span>
               </div>
-            </div>
+            </Link>
 
             <p className="text-neutral-400 text-xs leading-relaxed">
               Johannesburg's premier lifestyle club & kitchen lounge. Where nights come alive with luxury bottle service, flame-grilled food, and Amaren hubbly clouds.
@@ -69,29 +70,34 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <a href="#vibe" className="hover:text-[#D4AF37] transition-colors">
+                <Link to="/vibe" className="hover:text-[#D4AF37] transition-colors">
                   The Atmosphere & Vibe
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#kitchen-menu" className="hover:text-[#D4AF37] transition-colors">
+                <Link to="/kitchen" className="hover:text-[#D4AF37] transition-colors">
                   Flame-Grilled Kitchen Menu
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#bar-hubbly" className="hover:text-[#D4AF37] transition-colors">
+                <Link to="/drinks" className="hover:text-[#D4AF37] transition-colors">
                   Bottles, Spirits & Mixers
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#bar-hubbly" className="hover:text-[#D4AF37] transition-colors">
+                <Link to="/drinks" className="hover:text-[#D4AF37] transition-colors">
                   Amaren Hubbly Hookah Lounge
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#vip-booths" className="hover:text-[#D4AF37] transition-colors">
+                <Link to="/vip" className="hover:text-[#D4AF37] transition-colors">
                   VIP Booth Reservations
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link to="/location" className="hover:text-[#D4AF37] transition-colors">
+                  Location & Operating Hours
+                </Link>
               </li>
             </ul>
           </div>

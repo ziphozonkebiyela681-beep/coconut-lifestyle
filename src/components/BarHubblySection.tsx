@@ -63,6 +63,9 @@ export const BarHubblySection: React.FC<BarHubblySectionProps> = ({ onAddToCart 
                 alt="Coconut Lifestyle Main Cocktail Bar with bartender pouring craft drinks for patrons"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = '/assets/aistudio/WhatsApp_Image_2026-10-29_at_8.28.53_PM_1f33cc5c.jpg';
+                }}
               />
               <div className="absolute top-4 left-4 bg-black/85 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-[#D4AF37] border border-[#D4AF37]/40 flex items-center gap-1.5 shadow-lg">
                 <GlassWater className="w-3.5 h-3.5 text-[#D4AF37]" />
@@ -93,6 +96,9 @@ export const BarHubblySection: React.FC<BarHubblySectionProps> = ({ onAddToCart 
                 alt="VIP Nightclub Bottle Service on Ice with Hennessy and Don Julio"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = '/assets/menu/menu_vip_bottle_service_1793289945541.jpg';
+                }}
               />
               <div className="absolute top-4 left-4 bg-black/85 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-[#D4AF37] border border-[#D4AF37]/40 flex items-center gap-1.5 shadow-lg">
                 <Sparkles className="w-3.5 h-3.5 text-amber-400" />
@@ -126,6 +132,9 @@ export const BarHubblySection: React.FC<BarHubblySectionProps> = ({ onAddToCart 
                 alt="Amaren Hookah Hubbly Pipe with aromatic dense clouds"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = '/assets/menu/menu_amaren_hubbly_hookah_1793289944805.jpg';
+                }}
               />
               <div className="absolute top-4 left-4 bg-black/85 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-emerald-400 border border-emerald-500/40 flex items-center gap-1.5 shadow-lg">
                 <Sparkles className="w-3.5 h-3.5 text-emerald-400" />

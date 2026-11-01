@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Sparkles, UtensilsCrossed, Wine, Flame, MapPin, Phone, MessageCircle } from 'lucide-react';
 import { CLUB_INFO } from '../data/clubData';
 import { SparklingLogo } from './SparklingLogo';
 
 interface HeroProps {
   onOpenBooking: () => void;
-  onExploreMenu: () => void;
+  onExploreMenu?: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreMenu }) => {
@@ -102,13 +103,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreMenu }) => {
         </div>
 
         {/* Explore Menus Link */}
-        <button
-          onClick={onExploreMenu}
+        <Link
+          to="/kitchen"
           className="text-xs sm:text-sm font-semibold text-neutral-300 hover:text-white transition-colors flex items-center justify-center gap-1.5 underline decoration-[#D4AF37]/50 hover:decoration-[#D4AF37] mb-6"
         >
           <UtensilsCrossed className="w-3.5 h-3.5 text-[#D4AF37]" />
           <span>Explore Food & Drink Menus</span>
-        </button>
+        </Link>
 
         {/* Pronounced Rainbow Divider Ribbon */}
         <div className="w-48 sm:w-64 h-1 rainbow-gradient-bar rounded-full rainbow-glow-sm" />
